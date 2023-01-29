@@ -4,7 +4,7 @@ import hello.hellospring.domain.Member;
 
 import java.util.*;
 
-public class MemortMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L; //0,1,2 키 값을 생성해주는 아이이다.
@@ -22,7 +22,7 @@ public class MemortMemberRepository implements MemberRepository{
 
     @Override
     public Optional<Member> findByName(String name) {
-        store.values().stream()   //loop를 돌면서 찾는다.
+        return store.values().stream()   //loop를 돌면서 찾는다.
                 .filter(member -> member.getName().equals(name))
                 .findAny(); //findAny는 하나라도 찾는 것이다.
     }
@@ -30,5 +30,9 @@ public class MemortMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear(); //store을 비워준다.
     }
 }
