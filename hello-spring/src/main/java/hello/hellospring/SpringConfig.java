@@ -16,21 +16,21 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
-    @Autowired
-    public SpringConfig(EntityManager em) {
-        this.em = em;
-    }
+    private final MemberRepository memberRepository;
 
-    private EntityManager em;
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }//springdatajpa가 만들어놓은 구현체가 등록이 된다.
 
     @Bean //스프링 bean을 내가 등록하겠다.
     public MemberService memberService() {
-        return new MemberService(memberRepository()); //Autowired랑 같은 효과
+        return new MemberService(memberRepository); //Autowired랑 같은 효과
     }
 
-    @Bean
+    /*@Bean
     public MemberRepository memberRepository() {
         //return new JdbcMemberRepository(dataSource);
         return new JpaMemberRepository(em);
-    }
+    }*/
 }
