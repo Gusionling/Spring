@@ -29,10 +29,9 @@ public class MemberController {
         Member member = new Member();
         member.setName(form.getName());
         //멤버가 만들어졌다.
-
         memberService.join(member);
 
-        return "redirect:/"; //redirect는 홈화면으로 보내버리는 것이다.
+        return "redirect:/"; //redirect로 홈화면으로 보내버리는 것이다.
     }
 
     @GetMapping("/members")

@@ -19,6 +19,7 @@ class MemoryMemberRepositoryTest { //class레벨에서 돌리면 테스트 케�
     }
 
     @Test
+    //메인 메서드 쓰는거랑 비슷하다.
     public void save(){
         Member member = new Member();
         member.setName("spring");
@@ -58,5 +59,6 @@ class MemoryMemberRepositoryTest { //class레벨에서 돌리면 테스트 케�
 
         assertThat(result.size()).isEqualTo(2);
     }
+
 
 }
