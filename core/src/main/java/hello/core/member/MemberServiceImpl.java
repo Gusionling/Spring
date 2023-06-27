@@ -18,4 +18,9 @@ public class MemberServiceImpl implements MemberService{
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+    //스프링의 싱글톤 테스트를 위한 메서드
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
 }

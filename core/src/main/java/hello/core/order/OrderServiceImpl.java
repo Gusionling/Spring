@@ -24,4 +24,9 @@ public class OrderServiceImpl implements OrderService{
         int discountPrice = discountPolicy.discount(member, itemPrice);
         return new Order(memberId, itemName, itemPrice, discountPrice);
     }
+
+    //스프링의 싱글톤 테스트를 위한 메서드
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
 }
