@@ -3,7 +3,7 @@ package hello.core.lifecycle;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
-public class NetworkClient {  
+public class NetworkClient {
 
     private String url;
 
