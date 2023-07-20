@@ -34,6 +34,7 @@ public class FrontControllerServletV2 extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("FrontControllerServletV2.service");
         String requestURI = request.getRequestURI();
+        System.out.println("requestURI = " + requestURI);
 
         ControllerV2 controller = controllerMap.get(requestURI);
         System.out.println("controller = " + controller);
