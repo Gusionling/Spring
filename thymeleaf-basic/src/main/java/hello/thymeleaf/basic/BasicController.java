@@ -85,8 +85,6 @@ public class BasicController {
         return "basic/operation";
     }
 
-
-
     @GetMapping("/link")
     public String link(Model model) {
         model.addAttribute("param1", "data1");
@@ -94,11 +92,49 @@ public class BasicController {
         return "basic/link";
     }
 
+    @GetMapping("/attribute")
+    public String attribute(){
+        return "basic/attribute";
+    }
+
     @Component("helloBean")
-    static class HelloBean{
+    static class HelloBean {
         public String hello(String data) {
             return "Hello " + data;
         }
+    }
+
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUsers(model);
+        return "basic/each";
+    }
+
+    private void addUsers(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("userA", 10));
+        list.add(new User("userB", 20));
+        list.add(new User("userC", 30));
+
+        model.addAttribute("users", list);
+    }
+
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "spring!");
+        return "basic/comments";
+     }
+
+    @GetMapping("/block")
+    public String block(Model model) {
+        addUsers(model);
+        return "basic/block";
     }
 
     @Data
