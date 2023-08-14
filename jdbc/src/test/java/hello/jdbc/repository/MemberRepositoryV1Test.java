@@ -28,7 +28,7 @@ class MemberRepositoryV1Test {
        dataSource.setPassword(PASSWORD);
 
        repository = new MemberRepositoryV1(dataSource);
-       
+
    }
 
     @Test
