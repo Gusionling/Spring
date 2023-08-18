@@ -29,6 +29,7 @@ public class MemberServiceV2 {
             con.setAutoCommit(false); //트랜잭션 시작
             bisLogic(con, fromId, toId, money);
         } catch (Exception e){
+            log.info("예외가 터졌는가");
             con.rollback(); //실패시 롤백
             throw new IllegalStateException(e);
         } finally {
