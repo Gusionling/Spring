@@ -30,7 +30,7 @@ class ItemRepositoryTest {
     @Autowired
     ItemRepository itemRepository;
 
-    @Autowired
+   /* @Autowired
     PlatformTransactionManager transactionManager;
     TransactionStatus status;
 
@@ -38,7 +38,7 @@ class ItemRepositoryTest {
     void beforeEach() {
         //트랜젝션 시작
         status = transactionManager.getTransaction(new DefaultTransactionDefinition());
-    }
+    }*/
 
     @AfterEach
     void afterEach() {
@@ -47,7 +47,7 @@ class ItemRepositoryTest {
             ((MemoryItemRepository) itemRepository).clearStore();
         }
         //트랜잭션 롤백
-        transactionManager.rollback(status);
+        //transactionManager.rollback(status);
     }
 
     @Test
