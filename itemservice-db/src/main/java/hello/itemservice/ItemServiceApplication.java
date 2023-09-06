@@ -14,7 +14,8 @@ import javax.sql.DataSource;
 import java.sql.DriverManager;
 
 @Slf4j
-@Import(JpaConfig.class)
+@Import(SpringDataJpaConfig.class)
+//@Import(JpaConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
