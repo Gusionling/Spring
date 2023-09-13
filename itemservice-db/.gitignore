@@ -5,6 +5,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+#빌드 과정에서 생성되는 "generated"디렉토리 및 파일 무시
+generated/
+
 ### STS ###
 .apt_generated
 .classpath
