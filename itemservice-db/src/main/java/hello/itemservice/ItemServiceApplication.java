@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.sql.DriverManager;
 
 @Slf4j
-@Import(QueryDslConfig.class)
+@Import(V2Config.class)
 //@Import(JpaConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
