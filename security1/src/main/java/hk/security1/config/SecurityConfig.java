@@ -25,7 +25,7 @@ public class SecurityConfig{
         );
 
         http.formLogin(formLogin ->
-                formLogin.loginPage("/login")
+                formLogin.loginPage("/loginForm")
         );
 
 

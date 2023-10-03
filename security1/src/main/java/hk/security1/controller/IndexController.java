@@ -1,10 +1,13 @@
 package hk.security1.controller;
 
+import hk.security1.model.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+@Slf4j
 @Controller //view를 리턴하겠다!!
 public class IndexController {
 
@@ -35,20 +38,22 @@ public class IndexController {
 
     //spring security가 낚아챔 - spring security file을 만드니 작동하지 않음
 
-    @GetMapping("/login")
-    public String login(){
+    @GetMapping("/joinForm")
+    public String joinForm(){
+        return "joinForm";
+    }
+
+    @GetMapping("/loginForm")
+    public String loginForm(){
         return "loginForm";
     }
 
 
-    @GetMapping("/join")
-    public String join(){
+    @ResponseBody
+    @PostMapping("/join")
+    public String join(User user) {
+        log.info(String.valueOf(user));
         return "join";
     }
 
-    @ResponseBody
-    @GetMapping("/joinProc")
-    public String joinProc(){
-        return "회원가입 완료됨!";
-    }
 }
