@@ -34,10 +34,10 @@ public class IndexController {
     }
 
     //spring security가 낚아챔 - spring security file을 만드니 작동하지 않음
-    @ResponseBody
+
     @GetMapping("/login")
     public String login(){
-        return "login";
+        return "loginForm";
     }
 
 
