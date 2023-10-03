@@ -1,4 +1,4 @@
-package hk.security1;
+package hk.security1.config;
 
 import org.springframework.boot.web.servlet.view.MustacheViewResolver;
 import org.springframework.context.annotation.Configuration;
