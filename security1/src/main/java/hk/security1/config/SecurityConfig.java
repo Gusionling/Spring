@@ -15,6 +15,7 @@ public class SecurityConfig{
 
 
     //해당 메서드의 리턴되는 오브젝트를 loc로 등록해준다.
+    //암호화를 하기위해 사용, spring security가 적용될 수 있게
     @Bean
     public BCryptPasswordEncoder encodePwd(){
         return new BCryptPasswordEncoder();
@@ -33,7 +34,11 @@ public class SecurityConfig{
         );
 
         http.formLogin(formLogin ->
-                formLogin.loginPage("/loginForm")
+                formLogin
+                        .loginPage("/loginForm")
+                        //시큐리티가 낚아채서 로그인 진행, auth 패키지를 파서 principalDetails를 만어야함
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/")
         );
 
 
