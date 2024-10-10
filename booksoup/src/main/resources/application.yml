@@ -1,0 +1,9 @@
+spring:
+    config:
+        import:
+            - classpath:/yaml/application-secret.yml
+    application:
+        name: booksoup
+
+    profiles:
+        include: secret
