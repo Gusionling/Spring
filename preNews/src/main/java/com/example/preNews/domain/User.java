@@ -40,7 +40,7 @@ public class User {
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "created_at")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 
@@ -48,6 +48,5 @@ public class User {
     public User(Long serialId) {
         this.serialId = serialId;
         this.isLogin = true;
-        this.createdAt = LocalDateTime.now();
     }
 }

@@ -40,6 +40,9 @@ dependencies {
 	// Webflux
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
+	// JSON
+	implementation 'net.minidev:json-smart:2.4.11'
+
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
