@@ -18,4 +18,12 @@ public class Member {
     private String name;
     private String password;
 
+    public static Member build(Long id, String name, String password) {
+        return Member.builder()
+                .id(id)
+                .name(name)
+                .password(password)
+                .build();
+    }
+
 }
