@@ -8,6 +8,10 @@ import fyt.find.domain.policy.SecretPolicy;
 import fyt.find.repository.GuestBookRepository;
 import fyt.find.repository.MemoryGuestBookRepository;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * packageName   : fyt.find.service
  * Author        : imhyeong-gyu
@@ -27,8 +31,16 @@ public class GuestBookService {
     //방명록에 comment 를 저장한다. <- but 현재는 그냥 생성시에
     public void addComment(Long guestBookId, Comment comment) {
         GuestBook guestBook = guestBookRepository.findById(guestBookId);
-        System.out.println(guestBook.toString());
         guestBook.addComment(comment);
+    }
+
+    // 주인 id 로 comment 를 찾는다.
+    public List<Comment> findCommentsByOwnerId(Long ownerId) {
+        GuestBook guestBook = guestBookRepository.findByOwnerId(ownerId);
+        if (guestBook == null || guestBook.getComments() == null) {
+            return Collections.emptyList();
+        }
+        return new ArrayList<>(guestBook.getComments());
     }
 
     // comment 를 읽는다.

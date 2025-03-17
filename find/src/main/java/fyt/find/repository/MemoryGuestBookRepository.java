@@ -1,5 +1,6 @@
 package fyt.find.repository;
 
+import fyt.find.domain.Comment;
 import fyt.find.domain.GuestBook;
 
 import java.util.HashMap;
@@ -33,11 +34,11 @@ public class MemoryGuestBookRepository implements GuestBookRepository {
     }
 
     @Override
-    public List<GuestBook> findByOwnerId(Long ownerId) {
+    public GuestBook findByOwnerId(Long ownerId) {
         return store.values().stream()
                 .filter(guestBook -> guestBook.getOwnerId().equals(ownerId))
-                .collect(Collectors.toList());
+                .findFirst()
+                .orElse(null);
     }
-
 
 }

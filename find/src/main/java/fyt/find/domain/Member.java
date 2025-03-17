@@ -15,7 +15,6 @@ import lombok.Getter;
 public class Member {
 
     private Long id;
-    private MemberType memberType;
     private String name;
     private String password;
 
@@ -24,28 +23,10 @@ public class Member {
     public static Member build(Long id,String name, String password) {
         return Member.builder()
                 .id(id)
-                .memberType(MemberType.GUEST)
                 .name(name)
                 .password(password)
                 .build();
     }
 
-    public static Member buildOwner(Long id,String name, String password) {
-        return Member.builder()
-                .id(id)
-                .memberType(MemberType.OWNER)
-                .name(name)
-                .password(password)
-                .build();
-    }
-
-
-    public enum MemberType{
-        GUEST, OWNER
-    }
-
-    public boolean isOwner(){
-        return this.memberType == MemberType.OWNER;
-    }
 
 }
