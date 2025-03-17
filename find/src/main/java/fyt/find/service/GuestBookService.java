@@ -3,6 +3,7 @@ package fyt.find.service;
 import fyt.find.domain.Comment;
 import fyt.find.domain.GuestBook;
 import fyt.find.domain.Member;
+import fyt.find.domain.policy.OwnerAndWriterSecretPolicy;
 import fyt.find.domain.policy.OwnerOnlySecretPolicy;
 import fyt.find.domain.policy.SecretPolicy;
 import fyt.find.repository.GuestBookRepository;
@@ -21,6 +22,7 @@ import java.util.List;
 public class GuestBookService {
 
     private final GuestBookRepository guestBookRepository = new MemoryGuestBookRepository();
+    //private final SecretPolicy secretPolicy = new OwnerAndWriterSecretPolicy();
     private final SecretPolicy secretPolicy = new OwnerOnlySecretPolicy();
 
     //guestBook 을 저장한다.
