@@ -47,7 +47,7 @@ public class GuestBookService {
     public String read(Long guestBookId, Long commentId, Member viewer) {
 
         GuestBook guestBook = guestBookRepository.findById(guestBookId);
-        Comment comment = guestBook.findById(commentId);
+        Comment comment = guestBook.findCommentByCommentId(commentId);
 
         if (comment == null) {
             throw new IllegalArgumentException("존재하지 않는 댓글입니다: " + commentId);

@@ -43,7 +43,7 @@ public class GuestBook {
                 .orElse(null);
     }
 
-    public Comment findById(Long commentId){
+    public Comment findCommentByCommentId(Long commentId){
         return comments.stream()
                 .filter(comment -> comment.getId().equals(commentId))
                 .findFirst()
