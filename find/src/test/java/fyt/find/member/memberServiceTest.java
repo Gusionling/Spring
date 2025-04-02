@@ -19,7 +19,12 @@ public class memberServiceTest {
     @Test
     void join() {
         //given
-        Member member = Member.build(1L, "홍길동", "1234");
+        //Member member = Member.build(1L, "홍길동", "1234");
+        Member member = Member.builder()
+                .id(1L)
+                .name("홍길동")
+                .password("1234")
+                .build();
 
         //when
         memberService.join(member);
