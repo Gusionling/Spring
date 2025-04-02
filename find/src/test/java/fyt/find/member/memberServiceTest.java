@@ -2,7 +2,6 @@ package fyt.find.member;
 
 import fyt.find.domain.Member;
 import fyt.find.service.MemberService;
-import fyt.find.service.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +13,7 @@ import org.junit.jupiter.api.Test;
  */
 public class memberServiceTest {
 
-    private final MemberService memberService = new MemberServiceImpl();
+    private final MemberService memberService = new MemberService();
 
     @Test
     void join() {

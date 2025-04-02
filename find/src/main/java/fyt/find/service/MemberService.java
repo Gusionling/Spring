@@ -1,6 +1,8 @@
 package fyt.find.service;
 
 import fyt.find.domain.Member;
+import fyt.find.repository.MemberRepository;
+import fyt.find.repository.MemoryMemberRepository;
 
 /**
  * packageName   : fyt.find.service
@@ -8,10 +10,16 @@ import fyt.find.domain.Member;
  * Data          : 2025. 3. 3.
  * Description   :
  */
-public interface MemberService {
+public class MemberService {
 
-    void join(Member member);
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
-    Member findMember(Long memberId);
+    public void join(Member member) {
+        memberRepository.save(member);
+    }
+
+    public Member findMember(Long memberId) {
+        return memberRepository.findById(memberId);
+    }
 
 }
