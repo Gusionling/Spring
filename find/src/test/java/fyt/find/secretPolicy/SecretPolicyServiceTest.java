@@ -28,8 +28,17 @@ public class SecretPolicyServiceTest {
 
     @BeforeEach
     void initData(){
-        owner = Member.build(1L, "홍길동", "1234");
-        visitor = Member.build(2L, "방문자1", "1234");
+        owner = Member.builder()
+                .id(1L)
+                .name("홍길동")
+                .password("1234")
+                .build();
+
+        visitor = Member.builder()
+                .id(2L)
+                .name("방문자1")
+                .password("1234")
+                .build();
 
         guestBook = GuestBook.build(1L, 1L);
         guestBookService.createGuestBook(guestBook);
