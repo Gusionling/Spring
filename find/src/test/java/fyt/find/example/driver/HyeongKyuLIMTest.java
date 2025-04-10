@@ -1,6 +1,7 @@
 package fyt.find.example.driver;
 
 import fyt.find.example.car.Car;
+import fyt.find.example.config.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,9 +18,10 @@ class HyeongKyuLIMTest {
     @Test
     void drive() {
         //given
-        Driver driver = new HyeongKyuLIM();
+        AppConfig appConfig = new AppConfig();
 
         //when
+        Driver driver = appConfig.diver();
 
         //then
         Assertions.assertThat(driver.drive()).isEqualTo("임형규가 소나타를 운전합니다.");

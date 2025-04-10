@@ -2,6 +2,7 @@ package fyt.find.example.driver;
 
 import fyt.find.example.car.Car;
 import fyt.find.example.car.Sonata;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.sql.SQLOutput;
@@ -13,9 +14,10 @@ import java.sql.SQLOutput;
  * Description   :
  */
 @Getter
+@AllArgsConstructor
 public class HyeongKyuLIM implements Driver {
 
-    private final Car car = new Sonata();
+    private final Car car;
 
     @Override
     public String drive() {
