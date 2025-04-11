@@ -1,6 +1,7 @@
 package fyt.find.example.car;
 
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 /**
  * packageName   : fyt.find.example.car
@@ -9,6 +10,7 @@ import lombok.Getter;
  * Description   :
  */
 @Getter
+@Component
 public class Sonata implements Car {
 
     private final String name = "소나타";

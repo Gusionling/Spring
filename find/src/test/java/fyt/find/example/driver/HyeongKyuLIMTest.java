@@ -21,12 +21,12 @@ class HyeongKyuLIMTest {
     void drive() {
         //given
         //AppConfig appConfig = new AppConfig();
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
 
         //when
         //Driver driver = appConfig.diver();
-        Driver driver = applicationContext.getBean("driver", Driver.class);
+        Driver driver = ac.getBean(Driver.class);
 
         //then
         Assertions.assertThat(driver.drive()).isEqualTo("임형규가 소나타를 운전합니다.");

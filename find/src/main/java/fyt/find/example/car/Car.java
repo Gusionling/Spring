@@ -6,6 +6,7 @@ package fyt.find.example.car;
  * Data          : 2025. 4. 10.
  * Description   :
  */
+
 public interface Car {
     String getName();
     String move();

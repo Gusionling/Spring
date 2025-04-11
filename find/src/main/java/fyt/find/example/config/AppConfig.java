@@ -5,7 +5,9 @@ import fyt.find.example.car.Sonata;
 import fyt.find.example.driver.Driver;
 import fyt.find.example.driver.HyeongKyuLIM;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * packageName   : fyt.find.example.config
@@ -15,15 +17,9 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
+@ComponentScan(
+       basePackages = "fyt.find.example"
+)
 public class AppConfig {
 
-    @Bean
-    public Driver driver(){
-        return new HyeongKyuLIM(car());
-    }
-
-    @Bean
-    public Car car(){
-        return new Sonata();
-    }
 }
