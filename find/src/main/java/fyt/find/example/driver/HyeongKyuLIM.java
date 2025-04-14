@@ -4,6 +4,7 @@ import fyt.find.example.car.Car;
 import fyt.find.example.car.Sonata;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,14 +18,11 @@ import java.sql.SQLOutput;
  */
 @Getter
 @Component
+@RequiredArgsConstructor
 public class HyeongKyuLIM implements Driver {
 
     private final Car car;
 
-    @Autowired
-    public HyeongKyuLIM(Car car) {
-        this.car = car;
-    }
 
     @Override
     public String drive() {
